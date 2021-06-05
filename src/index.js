@@ -1,6 +1,7 @@
 import processStyle from "./utils/processStyle";
 import getACSSObj from "./utils/getACSSObj";
 import textSACSS from "bundle-text:sacss";
+import countVolume from "./utils/countVolume";
 
 (() => {
   const $id = (id) => {
@@ -22,9 +23,9 @@ import textSACSS from "bundle-text:sacss";
     e.preventDefault();
     const {style, acss} = forData2json(new FormData(this));
     const {strStyle, strACSS} = processStyle(style, getACSSObj(textSACSS + '\n' + acss));
-
+    const strAppend =`/* 体积减少 ${countVolume(style, strStyle + strACSS)}% */\n\n`;
     $id('acssOutput').value = strACSS;
-    $id('styleOutput').value = strStyle;
+    $id('styleOutput').value = `${strAppend}${strStyle}`;
   };
   $FormMain.addEventListener('submit', onSubmit);
 })();

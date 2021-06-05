@@ -33,7 +33,8 @@ function processStyle(strStyle = '', objACSS = {}) {
 
   return {
     strACSS: arrACSS.join('\n'),
-    strStyle: arrStyle.join('\n')
+    strStyle: arrStyle.join('\n').replace(/ \*\/\n\/\*/g,''),
+    arrStyle
   };
 };
 

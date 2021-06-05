@@ -13,21 +13,11 @@
   <div class="df mb16">
     <label style="margin-right: -1px;" class="f1 db">
       <strong class="db mb8">填入 Atomic CSS 字符串: </strong>
-      <textarea name="acss" cols="30" rows="20" placeholder="sacss 中的代码已经内置，这里可以添加自定义的SACSS"></textarea>
+      <textarea name="acss" cols="30" rows="20" placeholder="这里的代码，表示你的项目里已经内置的 Atomic CSS 代码，会从下面的代码中过滤"></textarea>
     </label>
-    <label class="f1 db ">
+    <label class="f1 db">
       <strong class="db mb8">填入 Style 字符串: </strong>
-      <textarea name="style" cols="30" rows="20" placeholder="css,less,sacss...">
-      .test{
-        font-size: 12px;
-        color: red;
-        line-height: 24px; line-height: 100%; line-height:1.5;line-height:1.95;
-        color: #fff;
-      }
-      .hello > li{
-        display:block;
-      }
-    </textarea>
+      <textarea name="style" cols="30" rows="20" placeholder="css,less,sacss..."></textarea>
     </label>
   </div>
   <div class="tar">
@@ -35,9 +25,14 @@
   </div>
 </form>
 <div class="df mb16">
-  <textarea style="margin-right: -1px;" class="f1" id="acssOutput" cols="30" rows="20" readonly
-            placeholder="ACSS output"></textarea>
-  <textarea class="f1" id="styleOutput" cols="30" rows="20" readonly placeholder="style output"></textarea>
+  <div class="f1" style="margin-right: -1px;">
+    <strong class="db mb8">不在 sacss 文件里的代码: </strong>
+    <textarea id="acssOutput" cols="30" rows="20" readonly placeholder="ACSS output"></textarea>
+  </div>
+  <div class="f1">
+    <strong class="db mb8">替换后的代码: </strong>
+    <textarea id="styleOutput" cols="30" rows="20" readonly placeholder="style output"></textarea>
+  </div>
 </div>
 <script src="index.js"></script>
 </body>
